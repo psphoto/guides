@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Анкета по стилю — ребёнок 10–16 лет — Полина Сорокина</title>
+<meta name="description" content="Ответы на этот опросник помогают в составлении образов для съёмки.">
+<meta property="og:title" content="Анкета по стилю — ребёнок 10–16 лет — Полина Сорокина">
+<meta property="og:description" content="Ответы на этот опросник помогают в составлении образов для съёмки.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Анкета по стилю — ребёнок 10–16 лет — Полина Сорокина">
+<meta name="twitter:description" content="Ответы на этот опросник помогают в составлении образов для съёмки.">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="%232A4724"/><rect x="3" y="3" width="26" height="26" fill="none" stroke="%23C6CEC5" stroke-width="0.6"/><text x="16" y="21.5" font-family="Georgia, Times New Roman, serif" font-size="14" font-style="italic" fill="%23FAFAF7" text-anchor="middle">PS</text></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A0A0A;
+    --ivory:#C6CEC5;
+    --dark:#2A4724;
+    --white:#FFFFFF;
+    --gray:#2A4724;
+    --backdrop:#D9D7CE;
+    --line-on-light: rgba(10,10,10,0.14);
+    --line-on-dark: rgba(250,250,247,0.22);
+    --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    --col-w: min(600px, 100vw);
+    --pad: clamp(22px, 7vw, 40px);
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:var(--backdrop); }
+  body{ font-family:var(--sans); color:var(--ink); }
+
+  .page{ max-width:var(--col-w); margin:0 auto; background:var(--ivory); }
+
+  /* header */
+  .hero{ background:var(--dark); color:#FAFAF7; padding:56px var(--pad) 46px; }
+  .eyebrow{ font-size:10.5px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#FAFAF7; opacity:.75; margin:0 0 18px; }
+  .hero h1{ font-family:var(--serif); font-style:italic; font-weight:500; font-size:clamp(28px, 6vw, 40px); line-height:1.18; margin:0 0 18px; }
+  .hero p{ font-family:var(--sans); font-size:14.5px; line-height:1.6; color:#FAFAF7; opacity:.85; margin:0; max-width:48ch; }
+
+  /* sections */
+  .section{ padding:44px var(--pad); border-bottom:1px solid var(--line-on-light); }
+  .section:last-of-type{ border-bottom:none; }
+  .section-index{ font-size:10px; letter-spacing:0.08em; color:var(--gray); margin-bottom:26px; font-family:var(--sans); }
+
+  .field{ margin-bottom:30px; }
+  .field:last-child{ margin-bottom:0; }
+  .q-label{ display:block; font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--gray); margin-bottom:12px; }
+  .q-label .req{ opacity:.55; text-transform:none; letter-spacing:0; font-weight:400; }
+  .q-hint{ display:block; font-family:var(--sans); font-size:12px; color:var(--gray); opacity:.7; margin-top:6px; line-height:1.5; }
+
+  .field-row{ display:flex; gap:16px; flex-wrap:wrap; }
+  .field-row .field{ flex:1 1 130px; margin-bottom:30px; }
+
+  input[type=text], input[type=date], input[type=number], input[type=tel], textarea{
+    width:100%; border:none; border-bottom:1px solid var(--line-on-light);
+    background:transparent; font-family:var(--serif); font-size:17px;
+    padding:8px 2px; color:var(--ink); font-style:normal;
+  }
+  textarea{ font-family:var(--sans); font-size:14px; line-height:1.55; resize:vertical; min-height:70px; }
+  input::placeholder, textarea::placeholder{ color:rgba(10,10,10,0.32); font-family:var(--sans); font-size:13.5px; }
+  input:focus, textarea:focus{ outline:none; border-bottom-color:var(--dark); }
+  .field.error .q-label{ color:#8a2c1f; }
+  .field.error input{ border-bottom-color:#8a2c1f; }
+
+  .chip-group{ display:flex; flex-wrap:wrap; gap:9px; }
+  .chip{
+    border:1px solid var(--line-on-light); padding:9px 15px; border-radius:0;
+    font-family:var(--sans); font-size:12.5px; letter-spacing:0.02em;
+    cursor:pointer; user-select:none; background:transparent; color:var(--ink);
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  .chip:hover{ border-color:var(--dark); }
+  .chip.active{ background:var(--dark); color:#FAFAF7; border-color:var(--dark); }
+  .chip input{ display:none; }
+
+  .other-field{ display:none; margin-top:14px; }
+
+  /* footer CTA */
+  .cta{ background:var(--dark); color:#FAFAF7; padding:52px var(--pad) 60px; text-align:left; }
+  .send-btn{
+    display:block; width:100%; text-align:center; font-family:var(--sans);
+    font-size:12.5px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--dark); background:#FAFAF7; border:1px solid #FAFAF7;
+    padding:17px 20px; cursor:pointer; margin-bottom:16px;
+  }
+  .send-btn:hover{ background:transparent; color:#FAFAF7; }
+  .fallback{ text-align:center; }
+  .fallback a{ font-family:var(--sans); font-size:12px; color:#FAFAF7; opacity:.7; text-decoration:underline; cursor:pointer; }
+  .note{ font-family:var(--sans); font-size:12px; color:#FAFAF7; opacity:.55; margin-top:20px; line-height:1.6; }
+
+  @media (max-width:640px){
+    .page{ max-width:100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="hero">
+    <p class="eyebrow">Перед созданием образов</p>
+    <h1>Анкета по стилю<br>для ребёнка 10–16 лет</h1>
+  </div>
+
+  <div class="section">
+    <p class="section-index">01 / Контакты</p>
+
+    <div class="field" id="f-childname">
+      <label class="q-label">ФИО ребёнка</label>
+      <input type="text" id="childname" placeholder="Фамилия Имя">
+    </div>
+
+    <div class="field" id="f-childage">
+      <label class="q-label">Возраст ребёнка</label>
+      <input type="text" id="childage" placeholder="Например: 12">
+    </div>
+
+    <div class="field" id="f-parentname">
+      <label class="q-label">ФИО родителя / контактное лицо</label>
+      <input type="text" id="parentname" placeholder="Фамилия Имя Отчество">
+    </div>
+
+    <div class="field" id="f-parentphone">
+      <label class="q-label">Телефон родителя</label>
+      <input type="tel" id="parentphone" placeholder="+7 999 000-00-00">
+    </div>
+
+    <div class="field" id="f-date">
+      <label class="q-label">Дата съёмки</label>
+      <input type="date" id="shootdate">
+    </div>
+
+    <div class="field">
+      <label class="q-label">Ссылки на соцсети с актуальными фотографиями</label>
+      <input type="text" id="socials" placeholder="Instagram, VK и т.д.">
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-index">02 / Параметры</p>
+
+    <div class="field-row">
+      <div class="field">
+        <label class="q-label">Рост, см</label>
+        <input type="text" id="height" placeholder="150">
+      </div>
+      <div class="field">
+        <label class="q-label">Размер ноги</label>
+        <input type="text" id="shoesize" placeholder="36">
+      </div>
+      <div class="field">
+        <label class="q-label">Размер одежды</label>
+        <input type="text" id="clothingsize" placeholder="Например: 146–152">
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label class="q-label">Объём груди, см</label>
+        <input type="text" id="bust" placeholder="80">
+      </div>
+      <div class="field">
+        <label class="q-label">Объём талии, см</label>
+        <input type="text" id="waist" placeholder="60">
+      </div>
+      <div class="field">
+        <label class="q-label">Объём бёдер, см</label>
+        <input type="text" id="hips" placeholder="85">
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-index">03 / Характер и интересы</p>
+
+    <div class="field">
+      <label class="q-label">Какие у ребёнка увлечения, хобби?</label>
+      <textarea id="hobbies"></textarea>
+    </div>
+
+    <div class="field">
+      <label class="q-label">Какой ребёнок по темпераменту?</label>
+      <textarea id="temperament" placeholder="Например: спокойный и мечтательный / энергичный и яркий"></textarea>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-index">04 / Внешность и образ</p>
+
+    <div class="field" id="f-emphasize">
+      <label class="q-label">Что нравится подчёркивать во внешности</label>
+      <div class="chip-group" data-group="emphasize">
+        <label class="chip"><input type="checkbox" value="Глаза">Глаза</label>
+        <label class="chip"><input type="checkbox" value="Улыбку">Улыбку</label>
+        <label class="chip"><input type="checkbox" value="Волосы">Волосы</label>
+        <label class="chip"><input type="checkbox" value="Рост">Рост</label>
+        <label class="chip"><input type="checkbox" value="Индивидуальность">Индивидуальность</label>
+        <label class="chip"><input type="checkbox" value="Другое" class="other-trigger">Другое</label>
+      </div>
+      <input type="text" class="other-field" data-for="emphasize" placeholder="Уточните">
+    </div>
+
+    <div class="field" id="f-taboo">
+      <label class="q-label">Какие есть табу — что не любит открывать/показывать</label>
+      <div class="chip-group" data-group="taboo">
+        <label class="chip"><input type="checkbox" value="Ноги">Ноги</label>
+        <label class="chip"><input type="checkbox" value="Руки">Руки</label>
+        <label class="chip"><input type="checkbox" value="Живот">Живот</label>
+        <label class="chip"><input type="checkbox" value="Спина">Спина</label>
+        <label class="chip"><input type="checkbox" value="Плечи">Плечи</label>
+        <label class="chip"><input type="checkbox" value="Другое" class="other-trigger">Другое</label>
+      </div>
+      <input type="text" class="other-field" data-for="taboo" placeholder="Уточните">
+    </div>
+
+    <div class="field" id="f-prints">
+      <label class="q-label">Есть ли принты, которые не любит?</label>
+      <div class="chip-group" data-group="prints">
+        <label class="chip"><input type="checkbox" value="Горох">Горох</label>
+        <label class="chip"><input type="checkbox" value="Клетка">Клетка</label>
+        <label class="chip"><input type="checkbox" value="Полоска">Полоска</label>
+        <label class="chip"><input type="checkbox" value="Цветы">Цветы</label>
+        <label class="chip"><input type="checkbox" value="Анималистика">Анималистика</label>
+        <label class="chip"><input type="checkbox" value="Абстракция">Абстракция</label>
+        <label class="chip"><input type="checkbox" value="Вообще не любит принты">Вообще не любит принты</label>
+        <label class="chip"><input type="checkbox" value="Другое" class="other-trigger">Другое</label>
+      </div>
+      <input type="text" class="other-field" data-for="prints" placeholder="Уточните">
+    </div>
+
+    <div class="field">
+      <label class="q-label">Особенности внешности, о которых вы хотите сообщить стилисту</label>
+      <textarea id="features" placeholder="Например: шрамы, брекеты, чувствительность к некоторым тканям"></textarea>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="field">
+      <label class="q-label">Есть ли определённые образы, которые хочется попробовать?</label>
+      <textarea id="desiredlooks"></textarea>
+    </div>
+  </div>
+
+  <div class="cta">
+    <button class="send-btn" id="send-btn" onclick="sendAnketa()">Отправить в MAX</button>
+    <div class="fallback"><a onclick="copyAnketa()" id="copy-link">или скопировать текст анкеты</a></div>
+    <p class="note">Нажимая «Отправить», откроется экран отправки в MAX с готовым текстом анкеты — останется выбрать чат с Полиной Сорокиной и нажать «отправить».</p>
+  </div>
+
+</div>
+
+<script>
+  document.querySelectorAll('.chip-group input').forEach(function(input){
+    input.addEventListener('change', function(){
+      var group = input.closest('.chip-group');
+      input.closest('.chip').classList.toggle('active', input.checked);
+
+      var otherTrigger = group.querySelector('.other-trigger');
+      if(otherTrigger){
+        var otherField = document.querySelector('.other-field[data-for="' + group.dataset.group + '"]');
+        if(otherField) otherField.style.display = otherTrigger.checked ? 'block' : 'none';
+      }
+    });
+  });
+
+  function getChipValues(group){
+    var vals = [];
+    document.querySelectorAll('.chip-group[data-group="' + group + '"] input:checked').forEach(function(i){
+      if(i.classList.contains('other-trigger')){
+        var otherField = document.querySelector('.other-field[data-for="' + group + '"]');
+        var extra = otherField ? otherField.value.trim() : '';
+        vals.push('Другое' + (extra ? ': ' + extra : ''));
+      } else {
+        vals.push(i.value);
+      }
+    });
+    return vals.join(', ');
+  }
+
+  function clearErrors(){
+    document.querySelectorAll('.field.error').forEach(function(f){ f.classList.remove('error'); });
+  }
+
+  function buildText(){
+    var childname = document.getElementById('childname').value.trim();
+    var childage = document.getElementById('childage').value.trim();
+    var parentname = document.getElementById('parentname').value.trim();
+    var parentphone = document.getElementById('parentphone').value.trim();
+    var shootdate = document.getElementById('shootdate').value;
+    var socials = document.getElementById('socials').value.trim();
+
+    var height = document.getElementById('height').value.trim();
+    var shoesize = document.getElementById('shoesize').value.trim();
+    var clothingsize = document.getElementById('clothingsize').value.trim();
+    var bust = document.getElementById('bust').value.trim();
+    var waist = document.getElementById('waist').value.trim();
+    var hips = document.getElementById('hips').value.trim();
+
+    var hobbies = document.getElementById('hobbies').value.trim();
+    var temperament = document.getElementById('temperament').value.trim();
+
+    var emphasize = getChipValues('emphasize');
+    var taboo = getChipValues('taboo');
+    var prints = getChipValues('prints');
+    var features = document.getElementById('features').value.trim();
+
+    var desiredlooks = document.getElementById('desiredlooks').value.trim();
+
+    var lines = ['Анкета по стилю — ребёнок 10–16 лет', ''];
+    lines.push('ФИО ребёнка: ' + (childname || '—'));
+    if(childage) lines.push('Возраст: ' + childage);
+    lines.push('ФИО родителя: ' + (parentname || '—'));
+    lines.push('Телефон родителя: ' + (parentphone || '—'));
+    if(shootdate) lines.push('Дата съёмки: ' + shootdate);
+    if(socials) lines.push('Соцсети: ' + socials);
+    lines.push('');
+    if(height || shoesize || clothingsize || bust || waist || hips){
+      var params = [];
+      if(height) params.push('рост ' + height + ' см');
+      if(shoesize) params.push('нога ' + shoesize);
+      if(clothingsize) params.push('одежда ' + clothingsize);
+      if(bust) params.push('грудь ' + bust);
+      if(waist) params.push('талия ' + waist);
+      if(hips) params.push('бёдра ' + hips);
+      lines.push('Параметры: ' + params.join(', '));
+    }
+    lines.push('');
+    if(hobbies) lines.push('Увлечения / хобби: ' + hobbies);
+    if(temperament) lines.push('Темперамент: ' + temperament);
+    lines.push('');
+    if(emphasize) lines.push('Нравится подчёркивать: ' + emphasize);
+    if(taboo) lines.push('Табу (не открывать): ' + taboo);
+    if(prints) lines.push('Не любит принты: ' + prints);
+    if(features) lines.push('Особенности внешности: ' + features);
+    lines.push('');
+    if(desiredlooks) lines.push('Хочет попробовать образы: ' + desiredlooks);
+
+    return { text: lines.join('\n'), childname: childname, parentphone: parentphone, shootdate: shootdate };
+  }
+
+  function validate(data){
+    clearErrors();
+    var ok = true;
+    if(!data.childname){ document.getElementById('f-childname').classList.add('error'); ok = false; }
+    if(!data.parentphone){ document.getElementById('f-parentphone').classList.add('error'); ok = false; }
+    if(!data.shootdate){ document.getElementById('f-date').classList.add('error'); ok = false; }
+    if(!ok){
+      document.querySelector('.field.error').scrollIntoView({behavior:'smooth', block:'center'});
+    }
+    return ok;
+  }
+
+  function sendAnketa(){
+    var data = buildText();
+    if(!validate(data)) return;
+    var url = 'https://max.ru/:share?text=' + encodeURIComponent(data.text);
+    window.location.href = url;
+  }
+
+  function copyAnketa(){
+    var data = buildText();
+    if(!validate(data)) return;
+    navigator.clipboard.writeText(data.text).then(function(){
+      var link = document.getElementById('copy-link');
+      var original = link.textContent;
+      link.textContent = 'скопировано ✓';
+      setTimeout(function(){ link.textContent = original; }, 2000);
+    });
+  }
+</script>
+
+</body>
+</html>
