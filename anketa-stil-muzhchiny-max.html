@@ -229,6 +229,19 @@
 </div>
 
 <script>
+  var WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbx5yrhipO8kCknt9xoDnH4BEOihkdUgakNjBxjp3EYmlbdReV-u8z-abvBabp8J0r2e/exec';
+
+  function submitToSheet(type, channel, fields){
+    try{
+      fetch(WEBAPP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        body: JSON.stringify({ type: type, channel: channel, fields: fields })
+      });
+    }catch(e){}
+  }
+
   function clearErrors(){
     document.querySelectorAll('.field.error').forEach(function(f){ f.classList.remove('error'); });
   }
@@ -292,7 +305,12 @@
     if(goal) lines.push('Цель фотосессии: ' + goal);
     if(styleicon) lines.push('Импонирующий образ: ' + styleicon);
 
-    return { text: lines.join('\n'), fio: fio, shootdate: shootdate };
+    var fields = { fio: fio, shootdate: shootdate, socials: socials, height: height, shoesize: shoesize,
+      bust: bust, waist: waist, hips: hips, neck: neck, jeanssize: jeanssize, pantssize: pantssize,
+      tshirtsize: tshirtsize, shirtsize: shirtsize, jacketsize: jacketsize, stylewishes: stylewishes,
+      colorprint: colorprint, figurenotes: figurenotes, hobbies: hobbies, goal: goal, styleicon: styleicon };
+
+    return { text: lines.join('\n'), fio: fio, shootdate: shootdate, fields: fields };
   }
 
   function validate(data){
@@ -309,6 +327,7 @@
   function sendAnketa(){
     var data = buildText();
     if(!validate(data)) return;
+    submitToSheet('stil_men', 'max', data.fields);
     var url = 'https://max.ru/:share?text=' + encodeURIComponent(data.text);
     window.location.href = url;
   }

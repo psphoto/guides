@@ -272,6 +272,19 @@
 </div>
 
 <script>
+  var WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbx5yrhipO8kCknt9xoDnH4BEOihkdUgakNjBxjp3EYmlbdReV-u8z-abvBabp8J0r2e/exec';
+
+  function submitToSheet(type, channel, fields){
+    try{
+      fetch(WEBAPP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        body: JSON.stringify({ type: type, channel: channel, fields: fields })
+      });
+    }catch(e){}
+  }
+
   document.querySelectorAll('.chip-group input').forEach(function(input){
     input.addEventListener('change', function(){
       var group = input.closest('.chip-group');
@@ -348,7 +361,11 @@
     if(muah) lines.push('Визажист / волосы: ' + muah);
     if(publish) lines.push('Публикация фото: ' + publish);
 
-    return { text: lines.join('\n'), fio: fio, age: age, phone: phone };
+    var fields = { fio: fio, shootdate: shootdate, age: age, phone: phone, telegram: telegram,
+      goal: goal, fears: fears, important: important, selfimage: selfimage, brand: brand,
+      notwant: notwant, pinterest: pinterest, wishes: wishes, stylist: stylist, muah: muah, publish: publish };
+
+    return { text: lines.join('\n'), fio: fio, age: age, phone: phone, fields: fields };
   }
 
   function validate(data){
@@ -366,6 +383,7 @@
   function sendAnketa(){
     var data = buildText();
     if(!validate(data)) return;
+    submitToSheet('individual', 'telegram', data.fields);
     var url = 'https://t.me/polinasorokinaphoto?text=' + encodeURIComponent(data.text);
     window.location.href = url;
   }
