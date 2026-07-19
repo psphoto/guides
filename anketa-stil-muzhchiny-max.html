@@ -67,19 +67,6 @@
   .field.error .q-label{ color:#8a2c1f; }
   .field.error input{ border-bottom-color:#8a2c1f; }
 
-  .chip-group{ display:flex; flex-wrap:wrap; gap:9px; }
-  .chip{
-    border:1px solid var(--line-on-light); padding:9px 15px; border-radius:0;
-    font-family:var(--sans); font-size:12.5px; letter-spacing:0.02em;
-    cursor:pointer; user-select:none; background:transparent; color:var(--ink);
-    transition:background .15s, color .15s, border-color .15s;
-  }
-  .chip:hover{ border-color:var(--dark); }
-  .chip.active{ background:var(--dark); color:#FAFAF7; border-color:var(--dark); }
-  .chip input{ display:none; }
-
-  .other-field{ display:none; margin-top:14px; }
-
   /* footer CTA */
   .cta{ background:var(--dark); color:#FAFAF7; padding:52px var(--pad) 60px; text-align:left; }
   .send-btn{
@@ -135,72 +122,101 @@
         <input type="text" id="height" placeholder="180">
       </div>
       <div class="field">
-        <label class="q-label">Размер ноги</label>
+        <label class="q-label">Размер обуви</label>
         <input type="text" id="shoesize" placeholder="43">
       </div>
+    </div>
+
+    <div class="field">
+      <label class="q-label">Объём груди, см</label>
+      <input type="text" id="bust" placeholder="100">
+      <span class="q-hint">Лучше снять мерку по хорошо сидящему изделию — от подмышки до подмышки.</span>
+    </div>
+
+    <div class="field">
+      <label class="q-label">Объём талии, см</label>
+      <input type="text" id="waist" placeholder="85">
+      <span class="q-hint">Снимается там, где обычно носятся брюки/джинсы, по поясу изделия.</span>
+    </div>
+
+    <div class="field">
+      <label class="q-label">Объём бёдер, см</label>
+      <input type="text" id="hips" placeholder="100">
+      <span class="q-hint">По хорошо сидящим брюкам.</span>
+    </div>
+
+    <div class="field">
+      <label class="q-label">Обхват шеи, см</label>
+      <input type="text" id="neck" placeholder="40">
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-index">03 / Размеры одежды</p>
+
+    <div class="field-row">
       <div class="field">
-        <label class="q-label">Размер одежды</label>
-        <input type="text" id="clothingsize" placeholder="Например: 50, L">
+        <label class="q-label">Размер джинсов</label>
+        <input type="text" id="jeanssize" placeholder="Например: 32/34">
+      </div>
+      <div class="field">
+        <label class="q-label">Размер брюк</label>
+        <input type="text" id="pantssize" placeholder="Например: 50">
       </div>
     </div>
 
     <div class="field-row">
       <div class="field">
-        <label class="q-label">Объём груди, см</label>
-        <input type="text" id="bust" placeholder="100">
+        <label class="q-label">Размер футболок</label>
+        <input type="text" id="tshirtsize" placeholder="Например: L">
       </div>
       <div class="field">
-        <label class="q-label">Объём талии, см</label>
-        <input type="text" id="waist" placeholder="85">
+        <label class="q-label">Размер рубашек</label>
+        <input type="text" id="shirtsize" placeholder="Например: L">
       </div>
-      <div class="field">
-        <label class="q-label">Объём бёдер, см</label>
-        <input type="text" id="hips" placeholder="100">
-      </div>
+    </div>
+
+    <div class="field">
+      <label class="q-label">Размер пиджаков / курток</label>
+      <input type="text" id="jacketsize" placeholder="Например: 50">
     </div>
   </div>
 
   <div class="section">
-    <p class="section-index">03 / Характер и интересы</p>
+    <p class="section-index">04 / Стиль и образ</p>
 
     <div class="field">
-      <label class="q-label">Какие у вас увлечения, хобби, род занятий?</label>
+      <label class="q-label">Особые пожелания по стилю / ваше видение</label>
+      <textarea id="stylewishes" placeholder="Можно указать и то, что точно не хотите"></textarea>
+    </div>
+
+    <div class="field">
+      <label class="q-label">Пожелания / табу по цвету и принту</label>
+      <textarea id="colorprint"></textarea>
+    </div>
+
+    <div class="field">
+      <label class="q-label">Особенности / нюансы фигуры</label>
+      <textarea id="figurenotes"></textarea>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-index">05 / О вас</p>
+
+    <div class="field">
+      <label class="q-label">Какие у вас хобби?</label>
       <textarea id="hobbies"></textarea>
     </div>
 
     <div class="field">
-      <label class="q-label">Какой вы по темпераменту?</label>
-      <textarea id="temperament" placeholder="Например: спокойный и сдержанный / энергичный и харизматичный"></textarea>
-    </div>
-  </div>
-
-  <div class="section">
-    <p class="section-index">04 / Внешность и образ</p>
-
-    <div class="field" id="f-emphasize">
-      <label class="q-label">Что вы любите подчёркивать во внешности?</label>
-      <input type="text" id="emphasize" placeholder="Опишите своими словами">
+      <label class="q-label">Цель фотосессии</label>
+      <textarea id="goal"></textarea>
     </div>
 
     <div class="field">
-      <label class="q-label">Особенности внешности, о которых вы хотите сообщить стилисту</label>
-      <textarea id="features" placeholder="Например: шрамы или особенности фигуры"></textarea>
-    </div>
-
-    <div class="field" id="f-facialhair">
-      <label class="q-label">Есть ли борода/усы — учитывать при подборе образов?</label>
-      <div class="chip-group" data-group="facialhair">
-        <label class="chip"><input type="checkbox" value="Да, есть и останется">Да, есть и останется</label>
-        <label class="chip"><input type="checkbox" value="Нет">Нет</label>
-        <label class="chip"><input type="checkbox" value="Планирую сбрить до съёмки">Планирую сбрить до съёмки</label>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="field">
-      <label class="q-label">Есть ли определённые образы, которые хочется попробовать?</label>
-      <textarea id="desiredlooks"></textarea>
+      <label class="q-label">Чей мужской образ вам импонирует?</label>
+      <textarea id="styleicon" placeholder="Например: имена, референсы, фильмы, бренды"></textarea>
     </div>
   </div>
 
@@ -213,33 +229,6 @@
 </div>
 
 <script>
-  document.querySelectorAll('.chip-group input').forEach(function(input){
-    input.addEventListener('change', function(){
-      var group = input.closest('.chip-group');
-      input.closest('.chip').classList.toggle('active', input.checked);
-
-      var otherTrigger = group.querySelector('.other-trigger');
-      if(otherTrigger){
-        var otherField = document.querySelector('.other-field[data-for="' + group.dataset.group + '"]');
-        if(otherField) otherField.style.display = otherTrigger.checked ? 'block' : 'none';
-      }
-    });
-  });
-
-  function getChipValues(group){
-    var vals = [];
-    document.querySelectorAll('.chip-group[data-group="' + group + '"] input:checked').forEach(function(i){
-      if(i.classList.contains('other-trigger')){
-        var otherField = document.querySelector('.other-field[data-for="' + group + '"]');
-        var extra = otherField ? otherField.value.trim() : '';
-        vals.push('Другое' + (extra ? ': ' + extra : ''));
-      } else {
-        vals.push(i.value);
-      }
-    });
-    return vals.join(', ');
-  }
-
   function clearErrors(){
     document.querySelectorAll('.field.error').forEach(function(f){ f.classList.remove('error'); });
   }
@@ -251,44 +240,57 @@
 
     var height = document.getElementById('height').value.trim();
     var shoesize = document.getElementById('shoesize').value.trim();
-    var clothingsize = document.getElementById('clothingsize').value.trim();
     var bust = document.getElementById('bust').value.trim();
     var waist = document.getElementById('waist').value.trim();
     var hips = document.getElementById('hips').value.trim();
+    var neck = document.getElementById('neck').value.trim();
+
+    var jeanssize = document.getElementById('jeanssize').value.trim();
+    var pantssize = document.getElementById('pantssize').value.trim();
+    var tshirtsize = document.getElementById('tshirtsize').value.trim();
+    var shirtsize = document.getElementById('shirtsize').value.trim();
+    var jacketsize = document.getElementById('jacketsize').value.trim();
+
+    var stylewishes = document.getElementById('stylewishes').value.trim();
+    var colorprint = document.getElementById('colorprint').value.trim();
+    var figurenotes = document.getElementById('figurenotes').value.trim();
 
     var hobbies = document.getElementById('hobbies').value.trim();
-    var temperament = document.getElementById('temperament').value.trim();
-
-    var emphasize = document.getElementById('emphasize').value.trim();
-    var features = document.getElementById('features').value.trim();
-    var facialhair = getChipValues('facialhair');
-
-    var desiredlooks = document.getElementById('desiredlooks').value.trim();
+    var goal = document.getElementById('goal').value.trim();
+    var styleicon = document.getElementById('styleicon').value.trim();
 
     var lines = ['Анкета по стилю для мужчин', ''];
     lines.push('ФИО: ' + (fio || '—'));
     if(shootdate) lines.push('Дата съёмки: ' + shootdate);
     if(socials) lines.push('Соцсети: ' + socials);
     lines.push('');
-    if(height || shoesize || clothingsize || bust || waist || hips){
+    if(height || shoesize || bust || waist || hips || neck){
       var params = [];
       if(height) params.push('рост ' + height + ' см');
-      if(shoesize) params.push('нога ' + shoesize);
-      if(clothingsize) params.push('одежда ' + clothingsize);
+      if(shoesize) params.push('обувь ' + shoesize);
       if(bust) params.push('грудь ' + bust);
       if(waist) params.push('талия ' + waist);
       if(hips) params.push('бёдра ' + hips);
+      if(neck) params.push('шея ' + neck);
       lines.push('Параметры: ' + params.join(', '));
     }
+    if(jeanssize || pantssize || tshirtsize || shirtsize || jacketsize){
+      var sizes = [];
+      if(jeanssize) sizes.push('джинсы ' + jeanssize);
+      if(pantssize) sizes.push('брюки ' + pantssize);
+      if(tshirtsize) sizes.push('футболки ' + tshirtsize);
+      if(shirtsize) sizes.push('рубашки ' + shirtsize);
+      if(jacketsize) sizes.push('пиджаки/куртки ' + jacketsize);
+      lines.push('Размеры одежды: ' + sizes.join(', '));
+    }
     lines.push('');
-    if(emphasize) lines.push('Любит подчёркивать: ' + emphasize);
-    if(features) lines.push('Особенности внешности: ' + features);
-    if(facialhair) lines.push('Борода/усы: ' + facialhair);
+    if(stylewishes) lines.push('Пожелания по стилю / видение: ' + stylewishes);
+    if(colorprint) lines.push('Цвет и принт: ' + colorprint);
+    if(figurenotes) lines.push('Особенности фигуры: ' + figurenotes);
     lines.push('');
-    if(hobbies) lines.push('Увлечения / род занятий: ' + hobbies);
-    if(temperament) lines.push('Темперамент: ' + temperament);
-    lines.push('');
-    if(desiredlooks) lines.push('Хочет попробовать образы: ' + desiredlooks);
+    if(hobbies) lines.push('Хобби: ' + hobbies);
+    if(goal) lines.push('Цель фотосессии: ' + goal);
+    if(styleicon) lines.push('Импонирующий образ: ' + styleicon);
 
     return { text: lines.join('\n'), fio: fio, shootdate: shootdate };
   }
